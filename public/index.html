@@ -28,12 +28,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="project in projects">
+            <tr ng-repeat="project in projects | orderBy: 'startDate'">
                 <td ng-bind="project.name"></td>
                 <td ng-bind="project.teamMember.name"></td>
                 <td ng-bind="project.hours"></td>
                 <td ng-bind="project.type"></td>
-                <td ng-bind="project.status"></td>
+                <td ng-bind="project.status.name"></td>
                 <td>
                     <a href="#" ng-click="updateProject(project)">edit</a> |
                     <a href="#">todo</a> |

@@ -19,8 +19,6 @@ define(function(require, module, exports) {
 
 
             ProjectStatusService.prototype.list = function() {
-                console.log('ProjectStatusService.list');
-
                 return $http.get('/projectStatus');
             };
 

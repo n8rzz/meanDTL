@@ -43,7 +43,7 @@
             <br />
 
             <label for="project-developer">Developer<br />
-                <select name="project-developer" id="project-developer" ng-model="teamMember.name" ng-options="member as member.name for member in teamMembers">
+                <select name="project-developer" id="project-developer" ng-model="project.teamMember" ng-options="member as member.name for member in teamMembers track by member.name">
                     <option value="">- Select a developer -</option>
                 </select>
             </label>
@@ -51,7 +51,7 @@
             <br />
 
             <label for="project-status">Status<br />
-                <select name="project-status" id="project-status" ng-model="projectStatus.name" ng-options="status as status.name for status in projectStatus track by status.name">
+                <select name="project-status" id="project-status" ng-model="project.status" ng-options="status as status.name for status in projectStatus track by status.name">
                     <option value="">- Project Status -</option>
                 </select>
             </label>

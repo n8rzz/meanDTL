@@ -21,7 +21,7 @@ router.post('/projects', function(req, res) {
     var startDate = req.body.startDate;
     var endDate = req.body.endDate;
     var teamMember = req.body.teamMember.name;
-    var status = req.body.status.name;
+    var status = req.body.status;
     var hours = req.body.hours;
     var type = req.body.type;
     var notes = req.body.notes;
@@ -68,7 +68,7 @@ router.put('/projects/:id', function(req, res) {
     var startDate = doc.startDate;
     var endDate = doc.endDate;
     var teamMember = doc.teamMember.name;
-    var status = doc.status.name;
+    var status = doc.status;
     var hours = doc.hours;
     var type = doc.type;
     var notes = doc.notes;
