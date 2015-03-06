@@ -20,26 +20,32 @@ define(function(require, module, exports) {
             };
 
             /**
-             * Determines if a record is new or existing
-             * routes request accordingly; creates a new record
-             * or sends an update if the record already exists
+             * Sends POST request to create a new project
              *
-             * @method processProject
+             * @method createProject
              */
-            $scope.processProject = function () {
-                this.project = $.extend(baseProject, this.project);
+            $scope.createProject = function() {
                 if (this.project.name != null && this.project._id === null || 'undefined') {
 
                     Projects.create($scope.project)
                         .then($scope.handleSaveSuccess, $scope.handleSaveError);
+                }
+            };
 
-                } else if (this.project._id != null && this.project.name != null) {
+
+            /**
+             * Sends PUT request to update an existing project
+             *
+             * @method
+             */
+            $scope.editProject = function() {
+                if (this.project._id != null && this.project.name != null) {
 
                     Projects.update($scope.project)
                         .then($scope.handleSaveSuccess, $scope.handleSaveError)
                         .then($scope.refresh);
                 }
-            };
+            }
 
         }
     ]);

@@ -48,7 +48,7 @@ define(function(require, module, exports) {
              * @returns {HttpPromise}
              */
             ProjectService.prototype.update = function(project) {
-                return $http.put('/projects/' + project.id, project);
+                return $http.put('/projects/' + project._id, project);
             };
 
             /**

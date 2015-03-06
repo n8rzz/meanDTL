@@ -1,0 +1,89 @@
+<div>
+    <form ng-submit="createProject()">
+        <div class="blocks blocks_3up">
+            <label for="project-name">Project Name<br />
+                <input type="text" name="project-name" id="project-name" ng-model="project.name" placeholder="Project Name" />
+            </label>
+            <br />
+
+            <label for="project-nickname">Project Nickname<br />
+                <input type="text" name="project-nickname" id="project-nickname" ng-model="project.nickname" placeholder="Project Nickname" />
+            </label>
+
+            <br />
+
+            <label for="project-codes">Project Code(s)<br />
+                <input type="text" name="project-codes" id="project-codes" ng-model="project.codes" placeholder="Project Code" />
+            </label>
+
+            <br />
+
+            <label for="project-manager">PM<br />
+                <input type="text" name="project-manager" id="project-manager" ng-model="project.manager" placeholder="PM" />
+            </label>
+
+            <br />
+
+            <label for="project-roles">Role<br />
+                <input type="text" name="project-roles" id="project-roles" ng-model="project.roles" placeholder="Role(s)" />
+            </label>
+        </div>
+
+        <div class="blocks blocks_3up">
+            <label for="project-start-date">Start Date<br />
+                <input type="text" name="project-start-date" id="project-start-date" ng-model="project.startDate" placeholder="Start Date" />
+            </label>
+
+            <br />
+
+            <label for="project-end-date">End Date<br />
+                <input type="text" name="project-end-date" id="project-end-date" ng-model="project.endDate" placeholder="End Date" />
+            </label>
+
+            <br />
+
+            <label for="project-developer">Developer<br />
+                <select name="project-developer" id="project-developer" ng-model="project.teamMember" ng-options="member as member.name for member in teamMembers">
+                    <option value="">- Select a developer -</option>
+                </select>
+            </label>
+
+            <br />
+
+            <label for="project-status">Status<br />
+                <select name="project-status" id="project-status" ng-model="project.status" ng-options="status as status.name for status in projectStatus track by status.name">
+                    <option value="">- Project Status -</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="blocks blocks_3up">
+
+            <label for="project-hours">Hours Needed<br />
+                <input type="text" name="project-hours" id="project-hours" ng-model="project.hours" placeholder="Hours" />
+            </label>
+
+            <br />
+
+            <fieldset>
+                <legend>Project Type</legend>
+                <label for="project-type-client">
+                    <input type="radio" name="project-type-client" id="project-type-client" value="Client" ng-model="project.type" />
+                    Client
+                </label>
+
+                <label for="project-type-bravo">
+                    <input type="radio" name="project-type-bravo" id="project-type-bravo" value="Bravo" ng-model="project.type" />
+                    Bravo
+                </label>
+            </fieldset>
+        </div>
+
+        <div class="blocks">
+            <input type="submit" value="submit" />
+            <input type="button" value="cancel" ng-click="closeThisDialog()"/>
+            <a href="#" ng-click="deleteProject(project)">Delete</a>
+        </div>
+
+    </form>
+</div>

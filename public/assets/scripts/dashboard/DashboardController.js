@@ -34,7 +34,7 @@ define(function(require, module, exports) {
                 console.log('ProjectController.newProject');
                 $scope.project = null;
                 var dialog = ngDialog.open({
-                    template: 'assets/scripts/projects/forms/add-edit-project.html',
+                    template: 'assets/scripts/projects/forms/add-project.html',
                     controller: 'ProjectController',
                     data: {name: null},
                     overlay: false,
@@ -66,13 +66,13 @@ define(function(require, module, exports) {
              * @method editProject
              * @param {Object} project project data
              */
-            $scope.editProject = function(project) {
+            $scope.updateProject = function(project) {
                 console.log('ProjectController.editProject', project);
 
                 $scope.project = project;
 
                 var dialog = ngDialog.open({
-                    template: 'assets/scripts/projects/forms/add-edit-project.html',
+                    template: 'assets/scripts/projects/forms/edit-project.html',
                     controller: 'ProjectController',
                     data: $scope.project,
                     overlay: false,
@@ -178,8 +178,6 @@ define(function(require, module, exports) {
              * @private
              */
             function _handleSaveSuccess(success) {
-                console.log('DashboardController._handleSaveSuccess', success);
-
                 alert('Your changes have been saved');
                 ngDialog.closeAll('success');
             }
@@ -189,7 +187,6 @@ define(function(require, module, exports) {
              * @private
              */
             function _handleSaveError(response) {
-                console.log('DashboardController._handleSaveError', response);
                 alert('Whoops, something went wrong and there was an error.  Please try again.');
             }
 

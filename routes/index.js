@@ -55,9 +55,45 @@ router.post('/projects', function(req, res) {
 router.put('/projects/:id', function(req, res) {
     var db = req.db;
     var projectToUpdate = req.params.id;
-    var doc = { $set: req.body};
+    var projectBodyToUpdate;
+    console.log(req.params.id, req.body);
 
-    db.collection('projects').updateById(projectToUpdate, doc, function(err, result) {
+    var doc = req.body;
+
+    var name = doc.name;
+    var nickname = doc.nickname;
+    var code = doc.codes;
+    var manager = doc.manager;
+    var roles = doc.roles;
+    var startDate = doc.startDate;
+    var endDate = doc.endDate;
+    var teamMember = doc.teamMember.name;
+    var status = doc.status.name;
+    var hours = doc.hours;
+    var type = doc.type;
+    var notes = doc.notes;
+
+    projectBodyToUpdate = {
+        "name": name,
+        "nickname": nickname,
+        "codes": code,
+        "manager": manager,
+        "roles": roles,
+        "startDate": startDate,
+        "endDate": endDate,
+        "teamMember":
+        {
+            "name": teamMember
+        },
+        "status": status,
+        "hours": hours,
+        "type": type,
+        "notes": notes
+    };
+
+
+
+    db.collection('projects').updateById(projectToUpdate, projectBodyToUpdate, function(err, result) {
             res.send((result === 1) ? {msg: 'success'} : {msg: 'error ' + err});
     });
 });
