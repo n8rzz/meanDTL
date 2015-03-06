@@ -1,0 +1,4 @@
+define([
+    './ProjectStatusService'
+
+], function () {} );

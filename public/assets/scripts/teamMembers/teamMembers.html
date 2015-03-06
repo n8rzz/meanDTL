@@ -1,0 +1,22 @@
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Skills</th>
+            <th>Roles</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="member in teamMembers">
+            <td ng-bind="member.name"></td>
+            <td>
+                <ul>
+                    <li ng-repeat="skill in member.skills" ng-bind="skill"></li>
+                </ul>
+            </td>
+            <td>
+                <li ng-repeat="role in member.roles" ng-bind="role"></li>
+            </td>
+        </tr>
+    </tbody>
+</table>

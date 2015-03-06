@@ -1,0 +1,38 @@
+
+## Linux
+set up mongo in apt-get list
+sudo apt-get -y update
+sudo apt-get -y install mongodb-10gen
+
+sudo mkdir /data/db
+sudo chmod 0755 -R /data/db/*
+sudo chown -R mongodb:mongodb /data/db/*
+
+
+## OSX
+brew update
+brew install mongodb
+
+follow prompts at end of install
+
+mkdir -p /data/db
+
+whoami
+[username]
+
+sudo chmod 0755 -R /data/db/
+sudo chown [username] /data/db
+
+
+
+---
+Run Mongo
+---
+[mongo db]
+sudo mongod --dbpath path/to/data
+
+[mongo console]
+cd to mongo install dir
+sudo mongo
+
+start node server

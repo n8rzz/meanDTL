@@ -1,0 +1,26 @@
+<table border="1" style="margin-bottom: 10px;">
+    <thead>
+    <tr>
+        <th>Project</th>
+        <th>Developer</th>
+        <th>Hours</th>
+        <th>Project Type</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="project in projects">
+        <td ng-bind="project.name"></td>
+        <td>
+            <ul>
+                <li ng-repeat="member in project.team_members" ng-bind="member.id"></li>
+            </ul>
+        </td>
+        <td ng-bind="project.hours_needed"></td>
+        <td ng-bind="project.type"></td>
+        <td ng-bind="project.status"></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MEAN DTL Prototype</title>
+</head>
+
+<link rel="stylesheet" href="assets/vendor/ngDialog/css/ngDialog.css"/>
+<link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+<script src="assets/vendor/requirejs/require.js" data-main="assets/scripts/main.js"></script>
+
+<body ng-controller="DashboardController">
+  <h1>MEAN DTL Tool</h1>
+
+
+  <h3>Projects</h3>
+  <button type="button" ng-click="newProject()">Add Project</button>
+
+    <table border="1" style="margin-bottom: 10px;">
+        <thead>
+            <tr>
+                <th>Project</th>
+                <th>Developer</th>
+                <th>Hours</th>
+                <th>Project Type</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="project in projects">
+                <td ng-bind="project.name"></td>
+                <td ng-bind="project.teamMember.name"></td>
+                <td ng-bind="project.hours"></td>
+                <td ng-bind="project.type"></td>
+                <td ng-bind="project.status"></td>
+                <td>
+                    <a href="#" ng-click="editProject(project)">edit</a> |
+                    <a href="#">todo</a> |
+                    <a href="#" ng-click="deleteProject(project)">delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+  <br /><br /><br />
+
+  <h3>Team Members</h3>
+    <table cellpadding="5px" border="1">
+      <thead>
+      <tr>
+          <th>Name</th>
+          <th>Skills</th>
+          <th>Roles</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="member in teamMembers">
+          <td ng-bind="member.name"></td>
+          <td ng-bind="member.skills"></td>
+          <td ng-bind="member.roles"></td>
+      </tr>
+      </tbody>
+    </table>
+
+</body>
+</html>

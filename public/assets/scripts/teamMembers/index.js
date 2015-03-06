@@ -1,0 +1,5 @@
+define([
+    './TeamMemberDirective',
+
+    './TeamMemberService'
+], function () {} );
